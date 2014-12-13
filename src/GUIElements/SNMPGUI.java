@@ -1,3 +1,6 @@
+package GUIElements;
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,18 +11,18 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import snmp.getset.SNMPGETSET;
+import backend.SNMPGETSET;
 /**
  *
  * @author Joshua
  */
-public class NewJFrame extends javax.swing.JFrame {
+public class SNMPGUI extends javax.swing.JFrame {
 
     /**
      * Creates new form NewJFrame
      */
     private SNMPGETSET snmpGS;
-    public NewJFrame() throws UnknownHostException {
+    public SNMPGUI() throws UnknownHostException {
         initComponents();
         TextArea_Responses.append("Hello. Program Initialized.\n");
         
@@ -359,9 +362,9 @@ public class NewJFrame extends javax.swing.JFrame {
             try {
                 getSelected();
             } catch (IOException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(SNMPGUI.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InterruptedException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(SNMPGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         else
@@ -369,7 +372,7 @@ public class NewJFrame extends javax.swing.JFrame {
             try {
                 setSelected();
             } catch (IOException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(SNMPGUI.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }//GEN-LAST:event_Button_SendActionPerformed
@@ -436,23 +439,24 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SNMPGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SNMPGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SNMPGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SNMPGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new NewJFrame().setVisible(true);
+                    new SNMPGUI().setVisible(true);
                 } catch (UnknownHostException ex) {
-                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(SNMPGUI.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         });
